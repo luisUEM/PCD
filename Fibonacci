@@ -1,0 +1,63 @@
+package Fibonacci;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Fibonacci {
+
+	public int tamaño;
+	public String nombre;
+// constructor 	
+	public Fibonacci() {
+
+	}
+// Función que muestra la sucesión generada según el valor de "n"
+	public void mostrarSerie() {
+		System.out.println(this.nombre + " de tamaño " + this.tamaño + ":");
+		List<Integer> res = new ArrayList<>();
+		for(int i=0;i< tamaño; i++) {
+			res.add(fibonacci(i));
+		}
+// Bucle que suma todos los valores de la sucesión generada"i" previamente incluida en una lista de enteros
+		int suma = 0;
+		for (int i: res) {
+			System.out.print(i + " ");
+			suma += i;
+		}
+		System.out.println("\nSuma de la serie:" + suma);
+	}
+// Función que calcula el tiempo de ejecución 
+	public void tiempoEjecucion(Double inicio, Double fin) {
+		Double tiempo = (Double) ((fin - inicio) / 1000);
+		System.out.println("Tiempo de ejecución: " + tiempo + " segundos");
+	}
+// Función que controla la recurrencia del metodo 
+	int fibonacci(int tamaño) {
+		if (tamaño > 1) {
+			return fibonacci(tamaño- 1) + fibonacci(tamaño - 2);
+		} else if (tamaño == 1) {
+			return 1;
+		} else if (tamaño == 0) {
+			return 0;
+		} else {
+			System.out.println("Debes ingresar un tamaño mayor o igual a 1");
+			return -1;
+		}
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public int getTamaño() {
+		return tamaño;
+	}
+
+	public void setTamaño(int tamaño) {
+		this.tamaño = tamaño;
+	}
+}
