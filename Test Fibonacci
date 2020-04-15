@@ -1,0 +1,16 @@
+package Fibonacci;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		Fibonacci f2 = new Fibonacci();
+		f2.setNombre("Fibonacci expediente");
+		f2.setTamaño(50);
+		double inicio = System.currentTimeMillis();
+		f2.mostrarSerie();
+		double fin = System.currentTimeMillis();
+		f2.tiempoEjecucion(inicio,fin);
+
+	}
+}
